@@ -5,7 +5,7 @@ Expo test app to display expo-av Audio crash.
 - Clone project locally
 - Install dependencies using `bun install`
 - Run project using `bunx expo start`
-- launch the project in an android emulator by pushing `a`
+- Launch the project in an android emulator by pushing `a`
 
 ## Android
 The Audio player usually crashes after 41 plays.
