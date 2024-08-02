@@ -1,10 +1,9 @@
 import { createContext, ReactElement, useContext, useEffect, useRef, useState } from 'react';
 import { Audio, AVPlaybackStatus, AVPlaybackStatusSuccess } from 'expo-av';
 import { IAudioContext } from './IAudioContext';
-import {testAudio} from "@/assets/testAudio/testAudio";
-import {One} from "@/assets/testAudio/One";
-import {Three} from "@/assets/testAudio/Three";
-import {Two} from "@/assets/testAudio/Two";
+import { One } from "@/assets/testAudio/One";
+import { Three } from "@/assets/testAudio/Three";
+import { Two } from "@/assets/testAudio/Two";
 
 interface IAudioRequest {
   text: string;
