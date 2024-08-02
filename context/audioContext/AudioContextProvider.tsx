@@ -47,7 +47,6 @@ const useProvideAudio = (): IAudioContext => {
   };
 
   const onPlaybackStatusUpdate = async (playbackStatus: AVPlaybackStatus): Promise<void> => {
-    console.log(playbackStatus);
     if (isAVPlaybackStatusSuccess(playbackStatus) && playbackStatus.didJustFinish && !playbackStatus.isLooping) {
       isAudioPlayingRef.current = false;
       await unloadSound();

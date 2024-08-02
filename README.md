@@ -3,7 +3,7 @@ Expo test app to display expo-av Audio crash.
 
 ## Setup
 - Clone project locally
-- Install dependencies using `bun install`
+- Install dependencies using `npx bun install`
 - Run project using `bunx expo start`
 - Launch the project in an android emulator by pushing `a`
 
