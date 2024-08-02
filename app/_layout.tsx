@@ -7,7 +7,7 @@ import { useEffect } from 'react';
 import 'react-native-reanimated';
 
 import { useColorScheme } from '@/components/useColorScheme';
-import {ProvideAudioContext} from "@/context/audioContext/AudioContextProvider";
+import { ProvideAudioContext } from "@/context/audioContext/AudioContextProvider";
 
 export {
   // Catch any errors thrown by the Layout component.
