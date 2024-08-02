@@ -23,7 +23,7 @@ The Audio player usually crashes after 41 plays.
 
 ![img.png](img.png)
 
-- You can then push the Check expo-av getStatusAsync() button to display (see crashed state with error message below)
+- You can then push the Check expo-av getStatusAsync() button to display player error (see crashed state with error message below)
 
 ![img_2.png](img_2.png)
 
