@@ -1,16 +1,20 @@
 # React-Native-Expo-Audio-Test-App
+
 Expo test app to display expo-av Audio crash.
 
 ## Setup
+
 - Clone project locally
 - Install dependencies using `npm install`
 - Run project using `npm start`
 - Launch the project in an android emulator by pushing `a`
 
 ## Android
+
 The Audio player usually crashes after 41 plays.
 
 ### Steps to Recreate
+
 - Make sure volume is turned up
 - When presented with this UI:
 
@@ -28,4 +32,5 @@ The Audio player usually crashes after 41 plays.
 ![img_2.png](img_2.png)
 
 ## iOS
+
 No observed crash.
