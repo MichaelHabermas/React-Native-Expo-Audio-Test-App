@@ -91,7 +91,6 @@ const useProvideAudio = (): IAudioContext => {
   const onPlaybackStatusUpdate = async (playbackStatus: AVPlaybackStatus): Promise<void> => {
     if (isAVPlaybackStatusSuccess(playbackStatus)) {
       if (playbackStatus.didJustFinish && !playbackStatus.isLooping) {
-        console.log('Audio finished, cleaning up...');
         isAudioPlayingRef.current = false;
         setShouldPlayNextAudio(true);
         retryCount.current = 0;
@@ -125,7 +124,6 @@ const useProvideAudio = (): IAudioContext => {
   };
 
   const playAudio = async (audioString: IAudioRequest): Promise<void> => {
-    console.log('Starting playAudio...');
     if (retryCount.current >= MAX_RETRY_ATTEMPTS) {
       console.warn('Max retry attempts reached for audio playback');
       setShouldPlayNextAudio(true);
@@ -137,7 +135,6 @@ const useProvideAudio = (): IAudioContext => {
       setIsLoading(true);
       
       const uri = constructBase64AudioUri(audioString.base64Audio);
-      console.log('Creating new sound object...');
       
       let soundObj = audioPool.current.pop();
       if (!soundObj) {
@@ -155,10 +152,8 @@ const useProvideAudio = (): IAudioContext => {
       });
 
       setSound(soundObj);
-      console.log('Loading audio...');
       // Load and play the audio
       await soundObj.loadAsync({ uri }, { shouldPlay: true });
-      console.log('Audio loaded and playing...');
       isAudioPlayingRef.current = true;
       setPlayCount(p => p + 1);
       
@@ -176,22 +171,13 @@ const useProvideAudio = (): IAudioContext => {
   };
 
   const handleAddAudio = (): void => {
-    console.log('Adding audio to queue...');
     setAudioQueue(prev => [...prev, ...audioTriplet]);
   };
 
   // Audio queue management
   useEffect(() => {
     const processAudioQueue = async () => {
-      console.log('Processing queue:', {
-        queueLength: audioQueue.length,
-        shouldPlay: shouldPlayNextAudio,
-        hasSound: !!sound,
-        isPlaying: isAudioPlayingRef.current
-      });
-      
       if (audioQueue.length > 0 && shouldPlayNextAudio && !isAudioPlayingRef.current) {
-        console.log('Conditions met for playing next audio');
         const nextAudio = audioQueue[0];
         if (nextAudio) {
           setShouldPlayNextAudio(false);
